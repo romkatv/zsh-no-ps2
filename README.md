@@ -1,11 +1,10 @@
 # zsh-no-ps2: A plugin for zsh that inserts a newline on Enter if the typed command is incomplete
 
-Normally, when you press press <kbd>Enter</kbd> in zsh, one of two things
-happens: if the currently typed command is complete, zsh attempts to execute it;
-if it's incomplete, zsh displays the secondary prompt, also known as `PS2`, to
-invite you to continue typing the command. When this plugin is used,
-<kbd>Enter</kbd> inserts a newline if the typed command is incomplete.
-**No PS2!**
+Normally, when you press <kbd>Enter</kbd> in zsh, one of two things happens: if
+the currently typed command is complete, zsh attempts to execute it; if it's
+incomplete, zsh displays the secondary prompt, also known as `PS2`, to invite
+you to continue typing the command. When this plugin is used, <kbd>Enter</kbd>
+inserts a newline if the typed command is incomplete. **No PS2!**
 
 *Note:* You can forcefully insert a newline by pressing <kbd>Escape</kbd>
 followed by <kbd>Enter</kbd>, or <kbd>Alt-Enter</kbd>. This is the default
