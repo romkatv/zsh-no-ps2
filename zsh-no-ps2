@@ -1,9 +1,4 @@
 #!/usr/bin/env zsh
-#
-# This autoloadable function can be used as the accept-line zle widget.
-# If the current command is complete, the widget acts like the builtin
-# accept-line. Otherwise, instead of going into PS2 like the builtin
-# accept-line would do, it inserts \n at the cursor position.
 
 builtin emulate -L zsh
 
