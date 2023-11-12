@@ -12,7 +12,6 @@ binding in zsh, not part of this plugin.
 
 - [Installation](#installation)
 - [Configuration](#configuration)
-- [Caveats](#caveats)
 
 ## Installation
 
@@ -58,9 +57,3 @@ zstyle :zsh-no-ps2: accept-line 'alternative-zle-widget-name'
 Using `.accept-line` (note the leading dot) is a reasonable option here. You can
 also use an empty value, in which case `zsh-no-ps2` will never attempt to
 execute commands.
-
-## Caveats
-
-There is one case where zsh-no-ps2 does not stay true to its name: if you press
-<kbd>Enter</kbd> after typing `for x`, zsh will display the secondary prompt.
-This is [a bug in zsh](https://www.zsh.org/mla/users/2023/msg00468.html).
