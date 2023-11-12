@@ -12,6 +12,8 @@ binding in zsh, not part of this plugin.
 
 - [Installation](#installation)
 - [Configuration](#configuration)
+- [FAQ](#faq)
+  - [How do I force execution?](#how-do-i-force-execution)
 
 ## Installation
 
@@ -57,3 +59,24 @@ zstyle :zsh-no-ps2: accept-line 'alternative-zle-widget-name'
 Using `.accept-line` (note the leading dot) is a reasonable option here. You can
 also use an empty value, in which case `zsh-no-ps2` will never attempt to
 execute commands.
+
+## FAQ
+
+### How do I force execution?
+
+Sometimes you know that the command you've typed is malformed but you want to
+execute it anyway to see `PS2` or an error message. You can do this by
+manually executing the `accept-line` zle widget:
+
+1. Press <kbd>Escape</kbd> followed by <kbd>x</kbd>, or <kbd>Alt-x</kbd>.
+2. Type `accept-line`.
+3. Press <kbd>Enter</kbd>.
+
+If you do this often, you can bind `accept-line` to a key. If you don't use
+<kbd>Alt-Enter</kbd> for anything, you can use that one for forced execution.
+
+```zsh
+# Alt-Enter: Execute what's been typed even if it's malformed.
+bindkey '^[^J' accept-line
+bindkey '^[^M' accept-line
+```
