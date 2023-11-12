@@ -20,7 +20,7 @@ if functions[$func]=$PREBUFFER$BUFFER 2>/dev/null &&
     if [[ -n $w ]]; then
       builtin zle -- $w
     fi
-    return
+    builtin return
   fi
 fi
 
