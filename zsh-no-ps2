@@ -11,8 +11,10 @@ fi
 if functions[$func]=$PREBUFFER$BUFFER 2>/dev/null &&
    (( ${+functions[$func]} )); then
   builtin unfunction -- $func
-  if ! functions[$func]=$PREBUFFER$BUFFER$'\ndo\ndone' 2>/dev/null ||
-     (( ! ${+functions[$func]} )) ; then
+  if functions[$func]=$PREBUFFER$BUFFER$'\ndo\ndone' 2>/dev/null &&
+     (( ${+functions[$func]} )) ; then
+     builtin unfunction -- $func
+  else
     builtin local w
     builtin zstyle -s :zsh-no-ps2: accept-line w || w=accept-line
     if [[ -n $w ]]; then
@@ -20,7 +22,6 @@ if functions[$func]=$PREBUFFER$BUFFER 2>/dev/null &&
     fi
     return
   fi
-  builtin unfunction -- $func
 fi
 
 LBUFFER+=$'\n'
